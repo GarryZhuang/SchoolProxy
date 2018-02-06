@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A7E97369-4A46-4601-8F33-5BE213918013}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SchoolProxyV1.My.MyApplication</StartupObject>
-    <RootNamespace>SchoolProxyV1</RootNamespace>
-    <AssemblyName>SchoolProxyV1</AssemblyName>
+    <StartupObject>SchoolProxy.My.MyApplication</StartupObject>
+    <RootNamespace>SchoolProxy</RootNamespace>
+    <AssemblyName>SchoolProxy</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
@@ -21,7 +21,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>SchoolProxyV1.xml</DocumentationFile>
+    <DocumentationFile>SchoolProxy.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -31,7 +31,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>SchoolProxyV1.xml</DocumentationFile>
+    <DocumentationFile>SchoolProxy.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>

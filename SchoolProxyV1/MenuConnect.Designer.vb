@@ -54,7 +54,7 @@ Partial Class MenuConnect
         'StatusDisp
         '
         Me.StatusDisp.BackColor = System.Drawing.Color.Transparent
-        Me.StatusDisp.BackgroundImage = Global.SchoolProxyV1.My.Resources.Resources.WAIT
+        Me.StatusDisp.BackgroundImage = Global.SchoolProxy.My.Resources.Resources.WAIT
         Me.StatusDisp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.StatusDisp.Location = New System.Drawing.Point(40, 40)
         Me.StatusDisp.Name = "StatusDisp"
