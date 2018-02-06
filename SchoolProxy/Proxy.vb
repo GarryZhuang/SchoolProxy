@@ -315,19 +315,19 @@
             DisplayArea.Controls.Add(DispMenu)
         End If
         If MenuType = "setting" Then
-            Dim DispMenu As New MenuConnect
+            Dim DispMenu As New MenuSetting
             DisplayArea.Controls.Add(DispMenu)
         End If
         If MenuType = "help" Then
-            Dim DispMenu As New MenuConnect
+            Dim DispMenu As New MenuHelp
             DisplayArea.Controls.Add(DispMenu)
         End If
         If MenuType = "update" Then
-            Dim DispMenu As New MenuConnect
+            Dim DispMenu As New MenuUpdate
             DisplayArea.Controls.Add(DispMenu)
         End If
         If MenuType = "console" Then
-            Dim DispMenu As New MenuConnect
+            Dim DispMenu As New MenuConsole
             DisplayArea.Controls.Add(DispMenu)
         End If
     End Sub
