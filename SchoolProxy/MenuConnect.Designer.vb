@@ -36,13 +36,17 @@ Partial Class MenuConnect
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ForwardedDisplay = New System.Windows.Forms.Label()
+        Me.DiscardedDisplay = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.PacketsDisplay = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.PacketsMonitor = New System.Windows.Forms.Timer(Me.components)
-        Me.DiscardedDisplay = New System.Windows.Forms.Label()
-        Me.ForwardedDisplay = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.UploadCertificate = New System.Windows.Forms.Button()
+        Me.CertificateSelector = New System.Windows.Forms.OpenFileDialog()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -182,6 +186,26 @@ Partial Class MenuConnect
         Me.GroupBox2.TabIndex = 10
         Me.GroupBox2.TabStop = False
         '
+        'ForwardedDisplay
+        '
+        Me.ForwardedDisplay.AutoSize = True
+        Me.ForwardedDisplay.ForeColor = System.Drawing.Color.Orange
+        Me.ForwardedDisplay.Location = New System.Drawing.Point(123, 80)
+        Me.ForwardedDisplay.Name = "ForwardedDisplay"
+        Me.ForwardedDisplay.Size = New System.Drawing.Size(13, 13)
+        Me.ForwardedDisplay.TabIndex = 5
+        Me.ForwardedDisplay.Text = "0"
+        '
+        'DiscardedDisplay
+        '
+        Me.DiscardedDisplay.AutoSize = True
+        Me.DiscardedDisplay.ForeColor = System.Drawing.Color.Tomato
+        Me.DiscardedDisplay.Location = New System.Drawing.Point(123, 55)
+        Me.DiscardedDisplay.Name = "DiscardedDisplay"
+        Me.DiscardedDisplay.Size = New System.Drawing.Size(13, 13)
+        Me.DiscardedDisplay.TabIndex = 4
+        Me.DiscardedDisplay.Text = "0"
+        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -229,31 +253,54 @@ Partial Class MenuConnect
         '
         Me.PacketsMonitor.Interval = 1000
         '
-        'DiscardedDisplay
+        'Button1
         '
-        Me.DiscardedDisplay.AutoSize = True
-        Me.DiscardedDisplay.ForeColor = System.Drawing.Color.Tomato
-        Me.DiscardedDisplay.Location = New System.Drawing.Point(123, 55)
-        Me.DiscardedDisplay.Name = "DiscardedDisplay"
-        Me.DiscardedDisplay.Size = New System.Drawing.Size(13, 13)
-        Me.DiscardedDisplay.TabIndex = 4
-        Me.DiscardedDisplay.Text = "0"
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.Lime
+        Me.Button1.Location = New System.Drawing.Point(336, 170)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(98, 29)
+        Me.Button1.TabIndex = 11
+        Me.Button1.Text = "Connect"
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'ForwardedDisplay
+        'Button2
         '
-        Me.ForwardedDisplay.AutoSize = True
-        Me.ForwardedDisplay.ForeColor = System.Drawing.Color.Orange
-        Me.ForwardedDisplay.Location = New System.Drawing.Point(123, 80)
-        Me.ForwardedDisplay.Name = "ForwardedDisplay"
-        Me.ForwardedDisplay.Size = New System.Drawing.Size(13, 13)
-        Me.ForwardedDisplay.TabIndex = 5
-        Me.ForwardedDisplay.Text = "0"
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.ForeColor = System.Drawing.Color.Red
+        Me.Button2.Location = New System.Drawing.Point(336, 205)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(159, 29)
+        Me.Button2.TabIndex = 12
+        Me.Button2.Text = "Disconnect"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'UploadCertificate
+        '
+        Me.UploadCertificate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.UploadCertificate.ForeColor = System.Drawing.Color.GreenYellow
+        Me.UploadCertificate.Location = New System.Drawing.Point(433, 170)
+        Me.UploadCertificate.Name = "UploadCertificate"
+        Me.UploadCertificate.Size = New System.Drawing.Size(62, 29)
+        Me.UploadCertificate.TabIndex = 13
+        Me.UploadCertificate.Tag = ""
+        Me.UploadCertificate.Text = "SSL/TLS"
+        Me.UploadCertificate.UseVisualStyleBackColor = True
+        '
+        'CertificateSelector
+        '
+        Me.CertificateSelector.FileName = "Certificate File"
+        Me.CertificateSelector.Tag = "*.cer|"
+        Me.CertificateSelector.Title = "Select a SSL/TLS Certificate"
         '
         'MenuConnect
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DimGray
+        Me.Controls.Add(Me.UploadCertificate)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "MenuConnect"
@@ -286,4 +333,8 @@ Partial Class MenuConnect
     Friend WithEvents Label11 As Label
     Friend WithEvents ForwardedDisplay As Label
     Friend WithEvents DiscardedDisplay As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents UploadCertificate As Button
+    Friend WithEvents CertificateSelector As OpenFileDialog
 End Class

@@ -37,6 +37,14 @@ Public Class MenuConnect
             StatusLabel.Text = "Ready to Connect..."
             StatusLabel.ForeColor = Color.LightGreen
             StatusDisp.BackgroundImage = My.Resources.OK
+        Else
+            StatusLabel.Text = "No Internet Connection."
+            StatusLabel.ForeColor = Color.Orange
+            StatusDisp.BackgroundImage = My.Resources.WARNING
         End If
+    End Sub
+
+    Private Sub UploadCertificate_Click(sender As Object, e As EventArgs) Handles UploadCertificate.Click
+        CertificateSelector.ShowDialog()
     End Sub
 End Class
