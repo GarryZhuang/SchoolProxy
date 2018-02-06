@@ -1,5 +1,8 @@
 ﻿Public Class Proxy
 
+
+
+
     Private Sub Proxy_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
@@ -16,171 +19,298 @@
         ExitButton.BackColor = Color.LightCoral
     End Sub
 
+
+
+
+#Region "Panel Animations"
+
+    ' Panel Animations
+    ' Last checked on 6/2/18
+    ' Should not cause errors
+
+    Dim UserSelectedMenu As String
+
     'ConnectPanel
     Private Sub ConnectPanel_MouseEnter(sender As Object, e As EventArgs) Handles ConnectPanel.MouseEnter
-        If ConnectPanel.BackColor = Color.DarkGray Then
+        If UserSelectedMenu = "connect" Then
+        Else
             ConnectPanel.BackColor = Color.Gray
-            ConnectLabel.BackColor = Color.Gray
         End If
     End Sub
     Private Sub ConnectPanel_MouseLeave(sender As Object, e As EventArgs) Handles ConnectPanel.MouseLeave
-        If ConnectPanel.BackColor = Color.DimGray Then
+        If UserSelectedMenu = "connect" Then
         Else
             ConnectPanel.BackColor = Color.DarkGray
-            ConnectLabel.BackColor = Color.DarkGray
         End If
     End Sub
     Private Sub ConnectPanel_MouseClick(sender As Object, e As MouseEventArgs) Handles ConnectPanel.MouseClick
-        DisplayArea.Controls.Clear()
-
-        Dim UserControl As New MenuConnect
-        DisplayArea.Controls.Add(UserControl)
-
-        ConnectPanel.BackColor = Color.DimGray
-        ConnectLabel.BackColor = Color.DimGray
-
-        SettingsPanel.BackColor = Color.DarkGray
-        HelpPanel.BackColor = Color.DarkGray
-        UpdatePanel.BackColor = Color.DarkGray
-        ConsolePanel.BackColor = Color.DarkGray
-    End Sub
-    Private Sub ConnectLabel_Click(sender As Object, e As EventArgs) Handles ConnectLabel.Click
-        DisplayArea.Controls.Clear()
-
-        Dim UserControl As New MenuConnect
-        DisplayArea.Controls.Add(UserControl)
-
-        ConnectPanel.BackColor = Color.DimGray
-        ConnectLabel.BackColor = Color.DimGray
-
+        UserSelectedMenu = "connect"
         ConnectPanel.BackColor = Color.DimGray
         SettingsPanel.BackColor = Color.DarkGray
         HelpPanel.BackColor = Color.DarkGray
         UpdatePanel.BackColor = Color.DarkGray
         ConsolePanel.BackColor = Color.DarkGray
     End Sub
+
+    'ConnectLabel
     Private Sub ConnectLabel_MouseEnter(sender As Object, e As EventArgs) Handles ConnectLabel.MouseEnter
-
+        If UserSelectedMenu = "connect" Then
+        Else
+            ConnectPanel.BackColor = Color.Gray
+        End If
     End Sub
     Private Sub ConnectLabel_MouseLeave(sender As Object, e As EventArgs) Handles ConnectLabel.MouseLeave
-
+        If UserSelectedMenu = "connect" Then
+        Else
+            ConnectPanel.BackColor = Color.DarkGray
+        End If
+    End Sub
+    Private Sub ConnectLabel_Click(sender As Object, e As EventArgs) Handles ConnectLabel.Click
+        UserSelectedMenu = "connect"
+        ConnectPanel.BackColor = Color.DimGray
+        SettingsPanel.BackColor = Color.DarkGray
+        HelpPanel.BackColor = Color.DarkGray
+        UpdatePanel.BackColor = Color.DarkGray
+        ConsolePanel.BackColor = Color.DarkGray
     End Sub
 
 
     'SettingsPanel
     Private Sub SettingsPanel_MouseEnter(sender As Object, e As EventArgs) Handles SettingsPanel.MouseEnter
-        If SettingsPanel.BackColor = Color.DarkGray Then
+        If UserSelectedMenu = "setting" Then
+        Else
             SettingsPanel.BackColor = Color.Gray
         End If
     End Sub
     Private Sub SettingsPanel_MouseLeave(sender As Object, e As EventArgs) Handles SettingsPanel.MouseLeave
-        If SettingsPanel.BackColor = Color.DimGray Then
+        If UserSelectedMenu = "setting" Then
         Else
             SettingsPanel.BackColor = Color.DarkGray
         End If
     End Sub
     Private Sub SettingsPanel_MouseClick(sender As Object, e As MouseEventArgs) Handles SettingsPanel.MouseClick
+        UserSelectedMenu = "setting"
         ConnectPanel.BackColor = Color.DarkGray
         SettingsPanel.BackColor = Color.DimGray
         HelpPanel.BackColor = Color.DarkGray
         UpdatePanel.BackColor = Color.DarkGray
         ConsolePanel.BackColor = Color.DarkGray
     End Sub
-    Private Sub SettingsLabel_Click(sender As Object, e As EventArgs) Handles SettingsLabel.Click
 
-    End Sub
+    'SettingsLabel
     Private Sub SettingsLabel_MouseEnter(sender As Object, e As EventArgs) Handles SettingsLabel.MouseEnter
-
+        If UserSelectedMenu = "setting" Then
+        Else
+            SettingsPanel.BackColor = Color.Gray
+        End If
     End Sub
     Private Sub SettingsLabel_MouseLeave(sender As Object, e As EventArgs) Handles SettingsLabel.MouseLeave
-
+        If UserSelectedMenu = "setting" Then
+        Else
+            SettingsPanel.BackColor = Color.DarkGray
+        End If
     End Sub
+    Private Sub SettingsLabel_Click(sender As Object, e As EventArgs) Handles SettingsLabel.Click
+        UserSelectedMenu = "setting"
+        ConnectPanel.BackColor = Color.DarkGray
+        SettingsPanel.BackColor = Color.DimGray
+        HelpPanel.BackColor = Color.DarkGray
+        UpdatePanel.BackColor = Color.DarkGray
+        ConsolePanel.BackColor = Color.DarkGray
+    End Sub
+
+
 
     'HelpPanel
     Private Sub HelpPanel_MouseEnter(sender As Object, e As EventArgs) Handles HelpPanel.MouseEnter
-        If HelpPanel.BackColor = Color.DarkGray Then
+        If UserSelectedMenu = "help" Then
+        Else
             HelpPanel.BackColor = Color.Gray
         End If
     End Sub
     Private Sub HelpPanel_MouseLeave(sender As Object, e As EventArgs) Handles HelpPanel.MouseLeave
-        If HelpPanel.BackColor = Color.DimGray Then
+        If UserSelectedMenu = "help" Then
         Else
             HelpPanel.BackColor = Color.DarkGray
         End If
     End Sub
     Private Sub HelpPanel_MouseClick(sender As Object, e As MouseEventArgs) Handles HelpPanel.MouseClick
+        UserSelectedMenu = "help"
         ConnectPanel.BackColor = Color.DarkGray
         SettingsPanel.BackColor = Color.DarkGray
         HelpPanel.BackColor = Color.DimGray
         UpdatePanel.BackColor = Color.DarkGray
         ConsolePanel.BackColor = Color.DarkGray
     End Sub
-    Private Sub HelpLabel_Click(sender As Object, e As EventArgs) Handles HelpLabel.Click
 
-    End Sub
+    'HelpLabel
     Private Sub HelpLabel_MouseEnter(sender As Object, e As EventArgs) Handles HelpLabel.MouseEnter
-
+        If UserSelectedMenu = "help" Then
+        Else
+            HelpPanel.BackColor = Color.Gray
+        End If
     End Sub
     Private Sub HelpLabel_MouseLeave(sender As Object, e As EventArgs) Handles HelpLabel.MouseLeave
-
+        If UserSelectedMenu = "help" Then
+        Else
+            HelpPanel.BackColor = Color.DarkGray
+        End If
+    End Sub
+    Private Sub HelpLabel_Click(sender As Object, e As EventArgs) Handles HelpLabel.Click
+        UserSelectedMenu = "help"
+        ConnectPanel.BackColor = Color.DarkGray
+        SettingsPanel.BackColor = Color.DarkGray
+        HelpPanel.BackColor = Color.DimGray
+        UpdatePanel.BackColor = Color.DarkGray
+        ConsolePanel.BackColor = Color.DarkGray
     End Sub
 
     'UpdatePanel
     Private Sub UpdatePanel_MouseEnter(sender As Object, e As EventArgs) Handles UpdatePanel.MouseEnter
-        If UpdatePanel.BackColor = Color.DarkGray Then
+        If UserSelectedMenu = "update" Then
+        Else
             UpdatePanel.BackColor = Color.Gray
         End If
     End Sub
     Private Sub UpdatePanel_MouseLeave(sender As Object, e As EventArgs) Handles UpdatePanel.MouseLeave
-        If UpdatePanel.BackColor = Color.DimGray Then
+        If UserSelectedMenu = "update" Then
         Else
             UpdatePanel.BackColor = Color.DarkGray
         End If
     End Sub
     Private Sub UpdatePanel_MouseClick(sender As Object, e As MouseEventArgs) Handles UpdatePanel.MouseClick
+        UserSelectedMenu = "update"
         ConnectPanel.BackColor = Color.DarkGray
         SettingsPanel.BackColor = Color.DarkGray
         HelpPanel.BackColor = Color.DarkGray
         UpdatePanel.BackColor = Color.DimGray
         ConsolePanel.BackColor = Color.DarkGray
     End Sub
-    Private Sub UpdateLabel_Click(sender As Object, e As EventArgs) Handles UpdateLabel.Click
 
-    End Sub
+    'UpdateLabel
     Private Sub UpdateLabel_MouseEnter(sender As Object, e As EventArgs) Handles UpdateLabel.MouseEnter
-
+        If UserSelectedMenu = "update" Then
+        Else
+            UpdatePanel.BackColor = Color.Gray
+        End If
     End Sub
     Private Sub UpdateLabel_MouseLeave(sender As Object, e As EventArgs) Handles UpdateLabel.MouseLeave
-
+        If UserSelectedMenu = "update" Then
+        Else
+            UpdatePanel.BackColor = Color.DarkGray
+        End If
+    End Sub
+    Private Sub UpdateLabel_Click(sender As Object, e As EventArgs) Handles UpdateLabel.Click
+        UserSelectedMenu = "update"
+        ConnectPanel.BackColor = Color.DarkGray
+        SettingsPanel.BackColor = Color.DarkGray
+        HelpPanel.BackColor = Color.DarkGray
+        UpdatePanel.BackColor = Color.DimGray
+        ConsolePanel.BackColor = Color.DarkGray
     End Sub
 
     'ConsolePanel
     Private Sub ConsolePanel_MouseEnter(sender As Object, e As EventArgs) Handles ConsolePanel.MouseEnter
-        If ConsolePanel.BackColor = Color.DarkGray Then
+        If UserSelectedMenu = "console" Then
+        Else
             ConsolePanel.BackColor = Color.Gray
         End If
     End Sub
     Private Sub ConsolePanel_MouseLeave(sender As Object, e As EventArgs) Handles ConsolePanel.MouseLeave
-        If ConsolePanel.BackColor = Color.DimGray Then
+        If UserSelectedMenu = "console" Then
         Else
             ConsolePanel.BackColor = Color.DarkGray
         End If
     End Sub
     Private Sub ConsolePanel_MouseClick(sender As Object, e As MouseEventArgs) Handles ConsolePanel.MouseClick
+        UserSelectedMenu = "console"
         ConnectPanel.BackColor = Color.DarkGray
         SettingsPanel.BackColor = Color.DarkGray
         HelpPanel.BackColor = Color.DarkGray
         UpdatePanel.BackColor = Color.DarkGray
         ConsolePanel.BackColor = Color.DimGray
     End Sub
-    Private Sub ConsoleLabel_Click(sender As Object, e As EventArgs) Handles ConsoleLabel.Click
 
-    End Sub
+    'ConsoleLabel
     Private Sub ConsoleLabel_MouseEnter(sender As Object, e As EventArgs) Handles ConsoleLabel.MouseEnter
-
+        If UserSelectedMenu = "console" Then
+        Else
+            ConsolePanel.BackColor = Color.Gray
+        End If
     End Sub
     Private Sub ConsoleLabel_MouseLeave(sender As Object, e As EventArgs) Handles ConsoleLabel.MouseLeave
-
+        If UserSelectedMenu = "console" Then
+        Else
+            ConsolePanel.BackColor = Color.DarkGray
+        End If
     End Sub
+    Private Sub ConsoleLabel_Click(sender As Object, e As EventArgs) Handles ConsoleLabel.Click
+        UserSelectedMenu = "console"
+        ConnectPanel.BackColor = Color.DarkGray
+        SettingsPanel.BackColor = Color.DarkGray
+        HelpPanel.BackColor = Color.DarkGray
+        UpdatePanel.BackColor = Color.DarkGray
+        ConsolePanel.BackColor = Color.DimGray
+    End Sub
+
+#End Region
+
+
+#Region "Form Movement"
+
+    'Allow's the user to move the form freely
+
+    Dim IsUserDraggingForm As Boolean
+    Dim FormMouseX As Integer
+    Dim FormMouseY As Integer
+
+    'Top Bar
+    Private Sub TopBar_MouseDown(sender As Object, e As MouseEventArgs) Handles TopBar.MouseDown
+        IsUserDraggingForm = True
+        FormMouseX = Cursor.Position.X - Left
+        FormMouseY = Cursor.Position.Y - Top
+    End Sub
+    Private Sub TopBar_MouseMove(sender As Object, e As MouseEventArgs) Handles TopBar.MouseMove
+        If IsUserDraggingForm Then
+            Left = Cursor.Position.X - FormMouseX
+            Top = Cursor.Position.Y - FormMouseY
+        End If
+    End Sub
+    Private Sub TopBar_MouseUp(sender As Object, e As MouseEventArgs) Handles TopBar.MouseUp
+        IsUserDraggingForm = False
+    End Sub
+
+    'Top Title
+    Private Sub TopTitle_MouseDown(sender As Object, e As MouseEventArgs) Handles TopTitle.MouseDown
+        IsUserDraggingForm = True
+        FormMouseX = Cursor.Position.X - Left
+        FormMouseY = Cursor.Position.Y - Top
+    End Sub
+    Private Sub TopTitle_MouseMove(sender As Object, e As MouseEventArgs) Handles TopTitle.MouseMove
+        If IsUserDraggingForm Then
+            Left = Cursor.Position.X - FormMouseX
+            Top = Cursor.Position.Y - FormMouseY
+        End If
+    End Sub
+    Private Sub TopTitle_MouseUp(sender As Object, e As MouseEventArgs) Handles TopTitle.MouseUp
+        IsUserDraggingForm = False
+    End Sub
+
+    'Top Icon
+    Private Sub TopIcon_MouseDown(sender As Object, e As MouseEventArgs) Handles TopIcon.MouseDown
+        IsUserDraggingForm = True
+        FormMouseX = Cursor.Position.X - Left
+        FormMouseY = Cursor.Position.Y - Top
+    End Sub
+    Private Sub TopIcon_MouseMove(sender As Object, e As MouseEventArgs) Handles TopIcon.MouseMove
+        If IsUserDraggingForm Then
+            Left = Cursor.Position.X - FormMouseX
+            Top = Cursor.Position.Y - FormMouseY
+        End If
+    End Sub
+    Private Sub TopIcon_MouseUp(sender As Object, e As MouseEventArgs) Handles TopIcon.MouseUp
+        IsUserDraggingForm = False
+    End Sub
+#End Region
 
 End Class

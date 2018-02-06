@@ -23,11 +23,11 @@ Partial Class Proxy
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Proxy))
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TopBar = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ExitButton = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.TopTitle = New System.Windows.Forms.Label()
+        Me.TopIcon = New System.Windows.Forms.Panel()
         Me.ConnectPanel = New System.Windows.Forms.Panel()
         Me.ConnectLabel = New System.Windows.Forms.Label()
         Me.SettingsPanel = New System.Windows.Forms.Panel()
@@ -39,7 +39,7 @@ Partial Class Proxy
         Me.ConsolePanel = New System.Windows.Forms.Panel()
         Me.ConsoleLabel = New System.Windows.Forms.Label()
         Me.DisplayArea = New System.Windows.Forms.Panel()
-        Me.Panel1.SuspendLayout()
+        Me.TopBar.SuspendLayout()
         Me.ConnectPanel.SuspendLayout()
         Me.SettingsPanel.SuspendLayout()
         Me.HelpPanel.SuspendLayout()
@@ -47,17 +47,17 @@ Partial Class Proxy
         Me.ConsolePanel.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Panel1
+        'TopBar
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.ExitButton)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(504, 33)
-        Me.Panel1.TabIndex = 0
+        Me.TopBar.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TopBar.Controls.Add(Me.Label3)
+        Me.TopBar.Controls.Add(Me.ExitButton)
+        Me.TopBar.Controls.Add(Me.TopTitle)
+        Me.TopBar.Controls.Add(Me.TopIcon)
+        Me.TopBar.Location = New System.Drawing.Point(0, 0)
+        Me.TopBar.Name = "TopBar"
+        Me.TopBar.Size = New System.Drawing.Size(504, 33)
+        Me.TopBar.TabIndex = 0
         '
         'Label3
         '
@@ -82,28 +82,28 @@ Partial Class Proxy
         Me.ExitButton.TabIndex = 2
         Me.ExitButton.Text = "X"
         '
-        'Label1
+        'TopTitle
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(43, 5)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(103, 21)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Proxy Service"
+        Me.TopTitle.AutoSize = True
+        Me.TopTitle.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TopTitle.ForeColor = System.Drawing.Color.White
+        Me.TopTitle.Location = New System.Drawing.Point(43, 5)
+        Me.TopTitle.Name = "TopTitle"
+        Me.TopTitle.Size = New System.Drawing.Size(103, 21)
+        Me.TopTitle.TabIndex = 1
+        Me.TopTitle.Text = "Proxy Service"
         '
-        'Panel2
+        'TopIcon
         '
-        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
-        Me.Panel2.Location = New System.Drawing.Point(8, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(32, 32)
-        Me.Panel2.TabIndex = 1
+        Me.TopIcon.BackgroundImage = CType(resources.GetObject("TopIcon.BackgroundImage"), System.Drawing.Image)
+        Me.TopIcon.Location = New System.Drawing.Point(8, 0)
+        Me.TopIcon.Name = "TopIcon"
+        Me.TopIcon.Size = New System.Drawing.Size(32, 32)
+        Me.TopIcon.TabIndex = 1
         '
         'ConnectPanel
         '
-        Me.ConnectPanel.BackColor = System.Drawing.Color.DimGray
+        Me.ConnectPanel.BackColor = System.Drawing.Color.DarkGray
         Me.ConnectPanel.Controls.Add(Me.ConnectLabel)
         Me.ConnectPanel.Location = New System.Drawing.Point(0, 32)
         Me.ConnectPanel.Name = "ConnectPanel"
@@ -220,14 +220,14 @@ Partial Class Proxy
         Me.Controls.Add(Me.HelpPanel)
         Me.Controls.Add(Me.SettingsPanel)
         Me.Controls.Add(Me.ConnectPanel)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.TopBar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Proxy"
         Me.Text = "Form1"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.TopBar.ResumeLayout(False)
+        Me.TopBar.PerformLayout()
         Me.ConnectPanel.ResumeLayout(False)
         Me.ConnectPanel.PerformLayout()
         Me.SettingsPanel.ResumeLayout(False)
@@ -242,9 +242,9 @@ Partial Class Proxy
 
     End Sub
 
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label1 As Label
+    Friend WithEvents TopBar As Panel
+    Friend WithEvents TopIcon As Panel
+    Friend WithEvents TopTitle As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents ExitButton As Label
     Friend WithEvents ConnectPanel As Panel
