@@ -213,11 +213,13 @@ Partial Class Proxy
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(100, 121)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Location = New System.Drawing.Point(20, 36)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(111, 61)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "Nigger"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Proxy
