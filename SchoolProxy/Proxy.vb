@@ -311,6 +311,10 @@
     Private Sub TopIcon_MouseUp(sender As Object, e As MouseEventArgs) Handles TopIcon.MouseUp
         IsUserDraggingForm = False
     End Sub
+
+    Private Sub TopTitle_Click(sender As Object, e As EventArgs) Handles TopTitle.Click
+
+    End Sub
 #End Region
 
 End Class
