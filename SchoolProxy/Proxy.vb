@@ -1,24 +1,11 @@
 ﻿Public Class Proxy
 
-
-
+    Dim UserSelectedMenu As String
 
     Private Sub Proxy_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
     End Sub
-
-    ' Exiting the application :: Animations/Actions
-    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
-        End
-    End Sub
-    Private Sub ExitButton_MouseEnter(sender As Object, e As EventArgs) Handles ExitButton.MouseEnter
-        ExitButton.BackColor = Color.IndianRed
-    End Sub
-    Private Sub ExitButton_MouseLeave(sender As Object, e As EventArgs) Handles ExitButton.MouseLeave
-        ExitButton.BackColor = Color.LightCoral
-    End Sub
-
 
 
 
@@ -28,7 +15,6 @@
     ' Last checked on 6/2/18
     ' Should not cause errors
 
-    Dim UserSelectedMenu As String
 
     'ConnectPanel
     Private Sub ConnectPanel_MouseEnter(sender As Object, e As EventArgs) Handles ConnectPanel.MouseEnter
@@ -50,6 +36,7 @@
         HelpPanel.BackColor = Color.DarkGray
         UpdatePanel.BackColor = Color.DarkGray
         ConsolePanel.BackColor = Color.DarkGray
+        HandleMouseClickActions(UserSelectedMenu)
     End Sub
 
     'ConnectLabel
@@ -72,6 +59,7 @@
         HelpPanel.BackColor = Color.DarkGray
         UpdatePanel.BackColor = Color.DarkGray
         ConsolePanel.BackColor = Color.DarkGray
+        HandleMouseClickActions(UserSelectedMenu)
     End Sub
 
 
@@ -95,6 +83,7 @@
         HelpPanel.BackColor = Color.DarkGray
         UpdatePanel.BackColor = Color.DarkGray
         ConsolePanel.BackColor = Color.DarkGray
+        HandleMouseClickActions(UserSelectedMenu)
     End Sub
 
     'SettingsLabel
@@ -117,6 +106,7 @@
         HelpPanel.BackColor = Color.DarkGray
         UpdatePanel.BackColor = Color.DarkGray
         ConsolePanel.BackColor = Color.DarkGray
+        HandleMouseClickActions(UserSelectedMenu)
     End Sub
 
 
@@ -141,6 +131,7 @@
         HelpPanel.BackColor = Color.DimGray
         UpdatePanel.BackColor = Color.DarkGray
         ConsolePanel.BackColor = Color.DarkGray
+        HandleMouseClickActions(UserSelectedMenu)
     End Sub
 
     'HelpLabel
@@ -163,6 +154,7 @@
         HelpPanel.BackColor = Color.DimGray
         UpdatePanel.BackColor = Color.DarkGray
         ConsolePanel.BackColor = Color.DarkGray
+        HandleMouseClickActions(UserSelectedMenu)
     End Sub
 
     'UpdatePanel
@@ -185,6 +177,7 @@
         HelpPanel.BackColor = Color.DarkGray
         UpdatePanel.BackColor = Color.DimGray
         ConsolePanel.BackColor = Color.DarkGray
+        HandleMouseClickActions(UserSelectedMenu)
     End Sub
 
     'UpdateLabel
@@ -207,6 +200,7 @@
         HelpPanel.BackColor = Color.DarkGray
         UpdatePanel.BackColor = Color.DimGray
         ConsolePanel.BackColor = Color.DarkGray
+        HandleMouseClickActions(UserSelectedMenu)
     End Sub
 
     'ConsolePanel
@@ -229,6 +223,7 @@
         HelpPanel.BackColor = Color.DarkGray
         UpdatePanel.BackColor = Color.DarkGray
         ConsolePanel.BackColor = Color.DimGray
+        HandleMouseClickActions(UserSelectedMenu)
     End Sub
 
     'ConsoleLabel
@@ -251,10 +246,10 @@
         HelpPanel.BackColor = Color.DarkGray
         UpdatePanel.BackColor = Color.DarkGray
         ConsolePanel.BackColor = Color.DimGray
+        HandleMouseClickActions(UserSelectedMenu)
     End Sub
 
 #End Region
-
 
 #Region "Form Movement"
 
@@ -311,10 +306,44 @@
     Private Sub TopIcon_MouseUp(sender As Object, e As MouseEventArgs) Handles TopIcon.MouseUp
         IsUserDraggingForm = False
     End Sub
-
-    Private Sub TopTitle_Click(sender As Object, e As EventArgs) Handles TopTitle.Click
-
-    End Sub
 #End Region
+
+    Public Sub HandleMouseClickActions(ByVal MenuType As String)
+        DisplayArea.Controls.Clear()
+        If MenuType = "connect" Then
+            Dim DispMenu As New MenuConnect
+            DisplayArea.Controls.Add(DispMenu)
+        End If
+        If MenuType = "setting" Then
+            Dim DispMenu As New MenuConnect
+            DisplayArea.Controls.Add(DispMenu)
+        End If
+        If MenuType = "help" Then
+            Dim DispMenu As New MenuConnect
+            DisplayArea.Controls.Add(DispMenu)
+        End If
+        If MenuType = "update" Then
+            Dim DispMenu As New MenuConnect
+            DisplayArea.Controls.Add(DispMenu)
+        End If
+        If MenuType = "console" Then
+            Dim DispMenu As New MenuConnect
+            DisplayArea.Controls.Add(DispMenu)
+        End If
+    End Sub
+
+    ' Exiting the application :: Animations/Actions
+    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+        End
+    End Sub
+    Private Sub ExitButton_MouseEnter(sender As Object, e As EventArgs) Handles ExitButton.MouseEnter
+        ExitButton.BackColor = Color.IndianRed
+    End Sub
+    Private Sub ExitButton_MouseLeave(sender As Object, e As EventArgs) Handles ExitButton.MouseLeave
+        ExitButton.BackColor = Color.LightCoral
+    End Sub
+
+
+
 
 End Class

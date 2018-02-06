@@ -78,6 +78,30 @@
     <Compile Include="MenuConnect.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="MenuConsole.Designer.vb">
+      <DependentUpon>MenuConsole.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MenuConsole.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuHelp.Designer.vb">
+      <DependentUpon>MenuHelp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MenuHelp.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuSetting.Designer.vb">
+      <DependentUpon>MenuSetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MenuSetting.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuUpdate.Designer.vb">
+      <DependentUpon>MenuUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MenuUpdate.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Proxy.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +128,18 @@
   <ItemGroup>
     <EmbeddedResource Include="MenuConnect.resx">
       <DependentUpon>MenuConnect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuConsole.resx">
+      <DependentUpon>MenuConsole.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuHelp.resx">
+      <DependentUpon>MenuHelp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuSetting.resx">
+      <DependentUpon>MenuSetting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuUpdate.resx">
+      <DependentUpon>MenuUpdate.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proxy.resx">
       <DependentUpon>Proxy.vb</DependentUpon>
