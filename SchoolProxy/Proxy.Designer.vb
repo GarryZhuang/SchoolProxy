@@ -39,12 +39,14 @@ Partial Class Proxy
         Me.ConsolePanel = New System.Windows.Forms.Panel()
         Me.ConsoleLabel = New System.Windows.Forms.Label()
         Me.DisplayArea = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TopBar.SuspendLayout()
         Me.ConnectPanel.SuspendLayout()
         Me.SettingsPanel.SuspendLayout()
         Me.HelpPanel.SuspendLayout()
         Me.UpdatePanel.SuspendLayout()
         Me.ConsolePanel.SuspendLayout()
+        Me.DisplayArea.SuspendLayout()
         Me.SuspendLayout()
         '
         'TopBar
@@ -203,10 +205,20 @@ Partial Class Proxy
         '
         'DisplayArea
         '
+        Me.DisplayArea.Controls.Add(Me.Button1)
         Me.DisplayArea.Location = New System.Drawing.Point(1, 58)
         Me.DisplayArea.Name = "DisplayArea"
         Me.DisplayArea.Size = New System.Drawing.Size(502, 240)
         Me.DisplayArea.TabIndex = 5
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(100, 121)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Proxy
         '
@@ -238,6 +250,7 @@ Partial Class Proxy
         Me.UpdatePanel.PerformLayout()
         Me.ConsolePanel.ResumeLayout(False)
         Me.ConsolePanel.PerformLayout()
+        Me.DisplayArea.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -258,4 +271,5 @@ Partial Class Proxy
     Friend WithEvents UpdateLabel As Label
     Friend WithEvents ConsoleLabel As Label
     Friend WithEvents DisplayArea As Panel
+    Friend WithEvents Button1 As Button
 End Class
