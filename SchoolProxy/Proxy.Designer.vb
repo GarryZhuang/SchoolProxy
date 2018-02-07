@@ -24,7 +24,6 @@ Partial Class Proxy
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Proxy))
         Me.TopBar = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.ExitButton = New System.Windows.Forms.Label()
         Me.TopTitle = New System.Windows.Forms.Label()
         Me.TopIcon = New System.Windows.Forms.Panel()
@@ -50,7 +49,6 @@ Partial Class Proxy
         'TopBar
         '
         Me.TopBar.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TopBar.Controls.Add(Me.Label3)
         Me.TopBar.Controls.Add(Me.ExitButton)
         Me.TopBar.Controls.Add(Me.TopTitle)
         Me.TopBar.Controls.Add(Me.TopIcon)
@@ -58,17 +56,6 @@ Partial Class Proxy
         Me.TopBar.Name = "TopBar"
         Me.TopBar.Size = New System.Drawing.Size(504, 33)
         Me.TopBar.TabIndex = 0
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.LightCoral
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(448, 6)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(0, 20)
-        Me.Label3.TabIndex = 3
         '
         'ExitButton
         '
@@ -245,7 +232,6 @@ Partial Class Proxy
     Friend WithEvents TopBar As Panel
     Friend WithEvents TopIcon As Panel
     Friend WithEvents TopTitle As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents ExitButton As Label
     Friend WithEvents ConnectPanel As Panel
     Friend WithEvents SettingsPanel As Panel

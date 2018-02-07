@@ -33,11 +33,11 @@ Public Class MenuConnect
     Private Sub MenuConnect_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PacketsMonitor.Start() 'Start the packet monitor
 
-        If My.Computer.Network.IsAvailable = True Then
+        If My.Computer.Network.IsAvailable = True Then 'There is network
             StatusLabel.Text = "Ready to Connect..."
             StatusLabel.ForeColor = Color.LightGreen
             StatusDisp.BackgroundImage = My.Resources.OK
-        Else
+        Else                                            'No network detected
             StatusLabel.Text = "No Internet Connection."
             StatusLabel.ForeColor = Color.Orange
             StatusDisp.BackgroundImage = My.Resources.WARNING
@@ -45,10 +45,6 @@ Public Class MenuConnect
     End Sub
 
     Private Sub UploadCertificate_Click(sender As Object, e As EventArgs) Handles UploadCertificate.Click
-        CertificateSelector.ShowDialog()
-    End Sub
-
-    Public Sub CloseCustomUserControl()
-        CType(Me.TopLevelControl, Form).Close()
+        CertificateSelector.ShowDialog() 'Show the certificate selector
     End Sub
 End Class

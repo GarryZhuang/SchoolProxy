@@ -22,17 +22,28 @@ Partial Class MenuUpdate
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.SuspendLayout()
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Location = New System.Drawing.Point(3, -3)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(496, 101)
+        Me.GroupBox1.TabIndex = 0
+        Me.GroupBox1.TabStop = False
         '
         'MenuUpdate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DimGray
+        Me.Controls.Add(Me.GroupBox1)
         Me.Name = "MenuUpdate"
         Me.Size = New System.Drawing.Size(502, 240)
         Me.ResumeLayout(False)
 
     End Sub
 
+    Friend WithEvents GroupBox1 As GroupBox
 End Class

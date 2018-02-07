@@ -33,7 +33,7 @@ Partial Class MenuConnect
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.LabelSSLTLS = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.ForwardedDisplay = New System.Windows.Forms.Label()
@@ -47,9 +47,13 @@ Partial Class MenuConnect
         Me.Button2 = New System.Windows.Forms.Button()
         Me.UploadCertificate = New System.Windows.Forms.Button()
         Me.CertificateSelector = New System.Windows.Forms.OpenFileDialog()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -97,22 +101,22 @@ Partial Class MenuConnect
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(134, 36)
+        Me.Label3.Location = New System.Drawing.Point(105, 35)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(24, 18)
+        Me.Label3.Size = New System.Drawing.Size(53, 18)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "IP:"
+        Me.Label3.Text = "Your IP:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(122, 54)
+        Me.Label4.Location = New System.Drawing.Point(99, 53)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(36, 18)
+        Me.Label4.Size = New System.Drawing.Size(59, 18)
         Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Port:"
+        Me.Label4.Text = "Proxy IP:"
         '
         'Label5
         '
@@ -129,7 +133,7 @@ Partial Class MenuConnect
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.Red
-        Me.Label6.Location = New System.Drawing.Point(164, 39)
+        Me.Label6.Location = New System.Drawing.Point(164, 38)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(40, 13)
         Me.Label6.TabIndex = 6
@@ -139,26 +143,26 @@ Partial Class MenuConnect
         '
         Me.Label7.AutoSize = True
         Me.Label7.ForeColor = System.Drawing.Color.Red
-        Me.Label7.Location = New System.Drawing.Point(164, 57)
+        Me.Label7.Location = New System.Drawing.Point(164, 56)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(31, 13)
+        Me.Label7.Size = New System.Drawing.Size(40, 13)
         Me.Label7.TabIndex = 7
-        Me.Label7.Text = "8080"
+        Me.Label7.Text = "0.0.0.0"
         '
-        'Label8
+        'LabelSSLTLS
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.Color.Orange
-        Me.Label8.Location = New System.Drawing.Point(164, 85)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(71, 13)
-        Me.Label8.TabIndex = 8
-        Me.Label8.Text = "No Certificate"
+        Me.LabelSSLTLS.AutoSize = True
+        Me.LabelSSLTLS.ForeColor = System.Drawing.Color.Orange
+        Me.LabelSSLTLS.Location = New System.Drawing.Point(164, 85)
+        Me.LabelSSLTLS.Name = "LabelSSLTLS"
+        Me.LabelSSLTLS.Size = New System.Drawing.Size(71, 13)
+        Me.LabelSSLTLS.TabIndex = 8
+        Me.LabelSSLTLS.Text = "No Certificate"
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Panel1)
-        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.LabelSSLTLS)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.StatusLabel)
@@ -293,11 +297,43 @@ Partial Class MenuConnect
         Me.CertificateSelector.Tag = "*.cer|"
         Me.CertificateSelector.Title = "Select a SSL/TLS Certificate"
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"[Netspace Direct] Wheeler's Hill SC"})
+        Me.ComboBox1.Location = New System.Drawing.Point(7, 35)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(314, 21)
+        Me.ComboBox1.TabIndex = 14
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(6, 12)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(141, 12)
+        Me.Label2.TabIndex = 15
+        Me.Label2.Text = "Select Proxy to Connect:"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.ComboBox1)
+        Me.GroupBox3.Controls.Add(Me.Label2)
+        Me.GroupBox3.Location = New System.Drawing.Point(3, 164)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(327, 73)
+        Me.GroupBox3.TabIndex = 17
+        Me.GroupBox3.TabStop = False
+        '
         'MenuConnect
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DimGray
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.UploadCertificate)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -310,6 +346,8 @@ Partial Class MenuConnect
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -323,7 +361,7 @@ Partial Class MenuConnect
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents LabelSSLTLS As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label9 As Label
@@ -337,4 +375,7 @@ Partial Class MenuConnect
     Friend WithEvents Button2 As Button
     Friend WithEvents UploadCertificate As Button
     Friend WithEvents CertificateSelector As OpenFileDialog
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents GroupBox3 As GroupBox
 End Class

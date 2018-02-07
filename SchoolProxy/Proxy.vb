@@ -1,9 +1,28 @@
-﻿Public Class Proxy
+﻿Imports System.ComponentModel
+
+Public Class Proxy
 
     Dim UserSelectedMenu As String
 
     Private Sub Proxy_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        ConnectPanel.BackColor = Color.DimGray
+        UserSelectedMenu = "connect"
+
+        Dim DispMenu0 As New MenuConnect 'Define Menu
+        DisplayArea.Controls.Add(DispMenu0) 'Add the Menu
+
+        Dim DispMenu1 As New MenuSetting 'Define Menu
+        DisplayArea.Controls.Add(DispMenu1) 'Add the Menu
+
+        Dim DispMenu2 As New MenuHelp 'Define Menu
+        DisplayArea.Controls.Add(DispMenu2) 'Add the Menu
+
+        Dim DispMenu3 As New MenuUpdate 'Define Menu
+        DisplayArea.Controls.Add(DispMenu3) 'Add the Menu
+
+        Dim DispMenu4 As New MenuConsole 'Define Menu
+        DisplayArea.Controls.Add(DispMenu4) 'Add the Menu
     End Sub
 
 
@@ -248,7 +267,42 @@
         HandleMouseClickActions(UserSelectedMenu)
     End Sub
 
-#End Region
+#End Region 'Top level animations for panel's
+
+    Public Sub HandleMouseClickActions(ByVal MenuType As String)
+
+        'Hide the display before showing to code, this prevents control(0) from overriding everything.
+        DisplayArea.Controls(0).Hide()
+        DisplayArea.Controls(1).Hide()
+        DisplayArea.Controls(2).Hide()
+        DisplayArea.Controls(3).Hide()
+        DisplayArea.Controls(4).Hide()
+
+        'Connect Control
+        If MenuType = "connect" Then
+            DisplayArea.Controls(0).Show()
+        End If
+
+        'Setting Control
+        If MenuType = "setting" Then
+            DisplayArea.Controls(1).Show()
+        End If
+
+        'Help Control
+        If MenuType = "help" Then
+            DisplayArea.Controls(2).Show()
+        End If
+
+        'Update Control
+        If MenuType = "update" Then
+            DisplayArea.Controls(3).Show()
+        End If
+
+        'Console Control
+        If MenuType = "console" Then
+            DisplayArea.Controls(4).Show()
+        End If
+    End Sub 'Top level panel menu navigation
 
 #Region "Form Movement"
 
@@ -305,41 +359,41 @@
     Private Sub TopIcon_MouseUp(sender As Object, e As MouseEventArgs) Handles TopIcon.MouseUp
         IsUserDraggingForm = False
     End Sub
-#End Region
+#End Region 'Form Mouse move actions
 
-    Public Sub HandleMouseClickActions(ByVal MenuType As String)
+#Region "ExitSettings"
 
-        If MenuType = "connect" Then
-            Dim DispMenu As New MenuConnect
-            DisplayArea.Controls.Add(DispMenu)
-        End If
-        If MenuType = "setting" Then
-            Dim DispMenu As New MenuSetting
-            DisplayArea.Controls.Add(DispMenu)
-        End If
-        If MenuType = "help" Then
-            Dim DispMenu As New MenuHelp
-            DisplayArea.Controls.Add(DispMenu)
-        End If
-        If MenuType = "update" Then
-            Dim DispMenu As New MenuUpdate
-            DisplayArea.Controls.Add(DispMenu)
-        End If
-        If MenuType = "console" Then
-            Dim DispMenu As New MenuConsole
-            DisplayArea.Controls.Add(DispMenu)
-        End If
+    ' Exiting the application :: Animations/Actions 
+
+    'Animation to fade the form upon closing.
+    Public Sub AnimationsFadeOut()
+        For FadeOut = 90 To 10 Step -10
+            Me.Opacity = FadeOut / 100
+            Me.Refresh()
+            Threading.Thread.Sleep(5)
+        Next
     End Sub
 
-    ' Exiting the application :: Animations/Actions
+
+    'Show the animations upon closing.
+    Private Sub Proxy_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        AnimationsFadeOut()
+    End Sub
+
+    'Exit button click
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
-        End
+        Me.Close()
     End Sub
+
+    'Exit Button Animations
     Private Sub ExitButton_MouseEnter(sender As Object, e As EventArgs) Handles ExitButton.MouseEnter
         ExitButton.BackColor = Color.IndianRed
     End Sub
+
+    'Exit Button Animations
     Private Sub ExitButton_MouseLeave(sender As Object, e As EventArgs) Handles ExitButton.MouseLeave
         ExitButton.BackColor = Color.LightCoral
     End Sub
+#End Region 'Exit actions including methods, animations and tasks.
 
 End Class
