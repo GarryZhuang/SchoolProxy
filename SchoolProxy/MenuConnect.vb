@@ -47,4 +47,8 @@ Public Class MenuConnect
     Private Sub UploadCertificate_Click(sender As Object, e As EventArgs) Handles UploadCertificate.Click
         CertificateSelector.ShowDialog()
     End Sub
+
+    Public Sub CloseCustomUserControl()
+        CType(Me.TopLevelControl, Form).Close()
+    End Sub
 End Class

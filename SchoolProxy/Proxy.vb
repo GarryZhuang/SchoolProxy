@@ -308,7 +308,7 @@
 #End Region
 
     Public Sub HandleMouseClickActions(ByVal MenuType As String)
-        DisplayArea.Controls.Clear()
+
         If MenuType = "connect" Then
             Dim DispMenu As New MenuConnect
             DisplayArea.Controls.Add(DispMenu)
@@ -341,8 +341,5 @@
     Private Sub ExitButton_MouseLeave(sender As Object, e As EventArgs) Handles ExitButton.MouseLeave
         ExitButton.BackColor = Color.LightCoral
     End Sub
-
-
-
 
 End Class
