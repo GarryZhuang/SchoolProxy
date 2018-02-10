@@ -108,7 +108,7 @@ Partial Class MenuSetting
         '
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.ForeColor = System.Drawing.Color.Crimson
-        Me.Button2.Location = New System.Drawing.Point(373, 203)
+        Me.Button2.Location = New System.Drawing.Point(373, 206)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(112, 23)
         Me.Button2.TabIndex = 7

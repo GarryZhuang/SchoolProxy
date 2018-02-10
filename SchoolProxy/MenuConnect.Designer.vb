@@ -31,7 +31,7 @@ Partial Class MenuConnect
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.UserIP = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.LabelSSLTLS = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -50,6 +50,7 @@ Partial Class MenuConnect
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.IPGrabber = New System.ComponentModel.BackgroundWorker()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -129,15 +130,15 @@ Partial Class MenuConnect
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "SSL/TLS:"
         '
-        'Label6
+        'UserIP
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.ForeColor = System.Drawing.Color.Red
-        Me.Label6.Location = New System.Drawing.Point(164, 38)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(40, 13)
-        Me.Label6.TabIndex = 6
-        Me.Label6.Text = "0.0.0.0"
+        Me.UserIP.AutoSize = True
+        Me.UserIP.ForeColor = System.Drawing.Color.Red
+        Me.UserIP.Location = New System.Drawing.Point(164, 38)
+        Me.UserIP.Name = "UserIP"
+        Me.UserIP.Size = New System.Drawing.Size(40, 13)
+        Me.UserIP.TabIndex = 6
+        Me.UserIP.Text = "0.0.0.0"
         '
         'Label7
         '
@@ -166,7 +167,7 @@ Partial Class MenuConnect
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.StatusLabel)
-        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.UserIP)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label4)
@@ -328,6 +329,10 @@ Partial Class MenuConnect
         Me.GroupBox3.TabIndex = 17
         Me.GroupBox3.TabStop = False
         '
+        'IPGrabber
+        '
+        Me.IPGrabber.WorkerSupportsCancellation = True
+        '
         'MenuConnect
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -359,7 +364,7 @@ Partial Class MenuConnect
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents UserIP As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents LabelSSLTLS As Label
     Friend WithEvents GroupBox1 As GroupBox
@@ -378,4 +383,5 @@ Partial Class MenuConnect
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents IPGrabber As System.ComponentModel.BackgroundWorker
 End Class

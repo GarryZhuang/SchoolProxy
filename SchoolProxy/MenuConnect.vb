@@ -1,4 +1,6 @@
-﻿Imports System.Net.NetworkInformation 'Internet Traffic Logging Service
+﻿Imports System.IO 'File Reader, Writer & Manager
+Imports System.Net 'Network Settings
+Imports System.Net.NetworkInformation 'Internet Traffic Logging Service
 
 Public Class MenuConnect
 
@@ -31,13 +33,20 @@ Public Class MenuConnect
     End Sub
 
     Private Sub MenuConnect_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PacketsMonitor.Start() 'Start the packet monitor
 
-        If My.Computer.Network.IsAvailable = True Then 'There is network
+        CheckForIllegalCrossThreadCalls = False 'Keep this off, allows illegal cross threads
+
+        PacketsMonitor.Start() 'Start the packet monitor (Can be used offline)
+
+        If My.Computer.Network.IsAvailable = True Then              'There is network
             StatusLabel.Text = "Ready to Connect..."
             StatusLabel.ForeColor = Color.LightGreen
             StatusDisp.BackgroundImage = My.Resources.OK
-        Else                                            'No network detected
+
+            IPGrabber.WorkerSupportsCancellation = True             'Assure that BackgroundWorker can be stopped
+            IPGrabber.RunWorkerAsync()                              'Start the background worker
+
+        Else                                                        'No network detected
             StatusLabel.Text = "No Internet Connection."
             StatusLabel.ForeColor = Color.Orange
             StatusDisp.BackgroundImage = My.Resources.WARNING
@@ -47,4 +56,21 @@ Public Class MenuConnect
     Private Sub UploadCertificate_Click(sender As Object, e As EventArgs) Handles UploadCertificate.Click
         CertificateSelector.ShowDialog() 'Show the certificate selector
     End Sub
+
+    Private Sub IPGrabber_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles IPGrabber.DoWork
+
+        If IPGrabber.CancellationPending Then 'Check if BackgroundWorker has been terminated
+            e.Cancel = True 'Cancel the background worker
+            Return 'Return to code
+        End If
+
+        Dim req As HttpWebRequest = WebRequest.Create("http://schoolappip.000webhostapp.com/") 'IP Request site
+        Dim res As HttpWebResponse = req.GetResponse()
+        Dim Stream As Stream = res.GetResponseStream()
+        Dim sr As StreamReader = New StreamReader(Stream)
+        UserIP.Text = (sr.ReadToEnd())
+        UserIP.ForeColor = Color.Cyan
+        IPGrabber.CancelAsync() 'Cancel the Background worker
+    End Sub
+
 End Class
