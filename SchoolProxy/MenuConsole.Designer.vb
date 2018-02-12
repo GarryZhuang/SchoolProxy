@@ -22,36 +22,37 @@ Partial Class MenuConsole
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.ConsoleDisplay = New System.Windows.Forms.ListBox()
+        Me.ConsoleEntry = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
-        'ListBox1
+        'ConsoleDisplay
         '
-        Me.ListBox1.BackColor = System.Drawing.Color.Black
-        Me.ListBox1.ForeColor = System.Drawing.Color.Lime
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(3, 3)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(496, 212)
-        Me.ListBox1.TabIndex = 0
+        Me.ConsoleDisplay.BackColor = System.Drawing.Color.Black
+        Me.ConsoleDisplay.Font = New System.Drawing.Font("Consolas", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ConsoleDisplay.ForeColor = System.Drawing.Color.Lime
+        Me.ConsoleDisplay.FormattingEnabled = True
+        Me.ConsoleDisplay.Location = New System.Drawing.Point(3, 3)
+        Me.ConsoleDisplay.Name = "ConsoleDisplay"
+        Me.ConsoleDisplay.Size = New System.Drawing.Size(496, 212)
+        Me.ConsoleDisplay.TabIndex = 0
         '
-        'TextBox1
+        'ConsoleEntry
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.Black
-        Me.TextBox1.ForeColor = System.Drawing.Color.Lime
-        Me.TextBox1.Location = New System.Drawing.Point(3, 214)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(496, 20)
-        Me.TextBox1.TabIndex = 1
+        Me.ConsoleEntry.BackColor = System.Drawing.Color.Black
+        Me.ConsoleEntry.ForeColor = System.Drawing.Color.Lime
+        Me.ConsoleEntry.Location = New System.Drawing.Point(3, 214)
+        Me.ConsoleEntry.Name = "ConsoleEntry"
+        Me.ConsoleEntry.Size = New System.Drawing.Size(496, 20)
+        Me.ConsoleEntry.TabIndex = 1
         '
         'MenuConsole
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DimGray
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.ConsoleEntry)
+        Me.Controls.Add(Me.ConsoleDisplay)
         Me.Name = "MenuConsole"
         Me.Size = New System.Drawing.Size(502, 240)
         Me.ResumeLayout(False)
@@ -59,6 +60,6 @@ Partial Class MenuConsole
 
     End Sub
 
-    Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents ConsoleDisplay As ListBox
+    Friend WithEvents ConsoleEntry As TextBox
 End Class

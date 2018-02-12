@@ -46,6 +46,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -72,6 +75,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ErrorReporter.Designer.vb">
+      <DependentUpon>ErrorReporter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorReporter.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MenuConnect.Designer.vb">
       <DependentUpon>MenuConnect.vb</DependentUpon>
     </Compile>
@@ -126,6 +135,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ErrorReporter.resx">
+      <DependentUpon>ErrorReporter.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuConnect.resx">
       <DependentUpon>MenuConnect.vb</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +164,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -174,6 +187,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\WARNING.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUG.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

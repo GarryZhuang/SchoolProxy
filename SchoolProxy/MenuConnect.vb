@@ -1,6 +1,7 @@
 ﻿Imports System.IO 'File Reader, Writer & Manager
 Imports System.Net 'Network Settings
 Imports System.Net.NetworkInformation 'Internet Traffic Logging Service
+Imports System.Environment 'Error Logging Service
 
 Public Class MenuConnect
 
@@ -64,13 +65,27 @@ Public Class MenuConnect
             Return 'Return to code
         End If
 
-        Dim req As HttpWebRequest = WebRequest.Create("http://schoolappip.000webhostapp.com/") 'IP Request site
-        Dim res As HttpWebResponse = req.GetResponse()
-        Dim Stream As Stream = res.GetResponseStream()
-        Dim sr As StreamReader = New StreamReader(Stream)
-        UserIP.Text = (sr.ReadToEnd())
-        UserIP.ForeColor = Color.Cyan
-        IPGrabber.CancelAsync() 'Cancel the Background worker
+        Try
+            Dim req As HttpWebRequest = WebRequest.Create("http://schoolappip.000webhostapp.com/") 'IP Request site
+            Dim res As HttpWebResponse = req.GetResponse()
+            Dim Stream As Stream = res.GetResponseStream()
+            Dim sr As StreamReader = New StreamReader(Stream)
+            UserIP.Text = (sr.ReadToEnd())
+            UserIP.ForeColor = Color.Cyan
+            IPGrabber.CancelAsync() 'Cancel the Background worker
+        Catch ex As Exception
+            ErrorLoggingService(ex.ToString)
+        End Try
+
+    End Sub
+
+    Public Sub ErrorLoggingService(ByVal ErrorMSG As String)
+        Dim RandomSystem As Random = New Random
+        Dim RandomID = RandomSystem.Next(10000000, 99999999)
+
+        Dim AppDataFilePath As String = GetFolderPath(SpecialFolder.ApplicationData)
+        My.Computer.FileSystem.WriteAllText(AppDataFilePath & "\SchoolProxy\" & RandomID & "_[Crash].dmp", ErrorMSG, False)
+        Application.Run(New ErrorReporter())
     End Sub
 
 End Class
